@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green-Earth</title>
+    <!-- fav icon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/hero-leaf1.png"
+      type="image/x-icon"
+    />
+    <!-- daisy UI + Tailwind cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="font-[inter] m-0 p-0">
+    <header>
+      <!-- nav bar -->
+      <nav class="bg-[#15803d] text-white md:py-8 py-5">
+        <div
+          class="flex justify-between items-center md:w-11/12 px-2 mx-auto gap-3"
+        >
+          <h2 class="font-bold md:text-2xl text-xl">
+            <i class="fa-brands fa-canadian-maple-leaf text-red-900"></i> Green
+            Earth
+          </h2>
+          <ul class="flex justify-center md:gap-5 md:text-base gap-2 text-xs">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Plant a Tree</a></li>
+          </ul>
+          <button
+            class="bg-[#facc15] text-[#15803d] text-sm py-1 px-2 md:py-2.5 md:px-5 rounded-full cursor-pointer hover:bg-yellow-500"
+          >
+            Plant a Tree
+          </button>
+        </div>
+      </nav>
+      <!-- hero section -->
+      <section
+        class="bg-[#cff0dc] w-full md:h-[290px] h-[150px] mt-1 flex justify-center items-center"
+        style="
+          background-image: url(./assets/hero-leaf1.png),
+            url(./assets/hero-leaf2.png);
+          background-repeat: no-repeat, no-repeat;
+          background-position: left center, right center;
+          background-size: 30%, 30%;
+        "
+      >
+        <div class="md:space-y-5 space-y-2 text-center mx-auto">
+          <h1 class="md:text-4xl text-lg font-bold whitespace-nowrap">
+            Plant a Tree, Grow a Future
+          </h1>
+          <p class="md:text-sm text-xs mx-35">
+            Join our mission to plant 1 million trees and make the Earth greener
+            for future
+            <span class="md:block md:text-center">generations.</span>
+          </p>
+          <button
+            class="bg-[#facc15] text-[#15803d] text-sm py-1 px-2 md:py-2.5 md:px-5 rounded-full cursor-pointer hover:bg-yellow-500 mb-1"
+          >
+            Get Involved
+          </button>
+        </div>
+      </section>
+    </header>
+    <main class="">
+      <!-- card section -->
+      <section class="bg-[#f0fdf4] text-center py-20">
+        <h2 class="text-2xl font-semibold">Choose Your Trees</h2>
+        <!--  -->
+        <div class="w-11/12 border-2 mx-auto grid grid-cols-12 mt-7 space-x-1">
+          <aside id="category-container" class=" col-span-2 border-2">
+            <h1>hdjdkd</h1>
+          </aside>
+          <div class="col-span-8">
+            <h1>djkhfjghdfk</h1>
+          </div>
+          <aside class="col-span-2 border-2">
+            <h1>hdjdkd</h1>
+          </aside>
+        </div>
+      </section>
+      <!-- campaign section -->
+      <section class="bg-[#cff0dc]"></section>
+      <script src="./script/index.js"></script>
+    </main>
+  </body>
+</html>
