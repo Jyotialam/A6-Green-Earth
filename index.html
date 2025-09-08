@@ -37,26 +37,34 @@
         background-color: #15803d;
         color: white;
       }
+      @media (min-width: 768px) {
+        #hero-section {
+          background-image: url("./assets/hero-leaf1.png"),
+            url("./assets/hero-leaf2.png");
+          background-repeat: no-repeat, no-repeat;
+          background-position: left center, right center;
+        }
+      }
     </style>
   </head>
   <body class="font-[inter] m-0 p-0">
     <header>
       <!-- nav bar -->
-      <nav class="bg-[#15803d] text-white md:py-8 py-5">
+      <nav class="bg-[#15803d] text-white md:py-8 py-8">
         <div
-          class="flex flex-col md:flex-row justify-between items-center md:w-11/12 px-2 mx-auto gap-4"
+          class="flex flex-col md:flex-row justify-between items-center w-11/12 px-2 mx-auto gap-3"
         >
-          <h2 class="font-bold md:text-2xl text-xl">
+          <h2 class="font-bold text-3xl">
             <i class="fa-brands fa-canadian-maple-leaf text-red-900"></i> Green
             Earth
           </h2>
-          <ul class="flex justify-center md:gap-5 md:text-base gap-2 text-xs">
+          <ul class="flex justify-center md:gap-5 md:text-base gap-2 text-sm">
             <li><a href="#">About</a></li>
             <li><a href="#">Gallery</a></li>
             <li><a href="#">Plant a Tree</a></li>
           </ul>
           <button
-            class="bg-[#facc15] text-[#15803d] text-sm py-1 px-2 md:py-2.5 md:px-5 rounded-full cursor-pointer hover:bg-yellow-500"
+            class="bg-[#facc15] text-[#15803d] text-sm py-2.5 px-5 rounded-full cursor-pointer hover:bg-yellow-500"
           >
             Plant a Tree
           </button>
@@ -64,26 +72,20 @@
       </nav>
       <!-- hero section -->
       <section
-        class="bg-[#cff0dc] w-full md:h-[290px] h-[150px] mt-1 flex justify-center items-center"
-        style="
-          background-image: url(./assets/hero-leaf1.png),
-            url(./assets/hero-leaf2.png);
-          background-repeat: no-repeat, no-repeat;
-          background-position: left center, right center;
-          background-size: 30%, 30%;
-        "
+        id="hero-section"
+        class="bg-[#cff0dc] w-full md:h-[350px] h-[250px] mt-1 flex justify-center items-center p-5"
       >
-        <div class="md:space-y-5 space-y-2 text-center mx-auto">
-          <h1 class="md:text-4xl text-lg font-bold whitespace-nowrap">
+        <div class="space-y-3 text-center mx-auto">
+          <h1 class="md:text-4xl text-3xl font-bold whitespace-nowrap">
             Plant a Tree, Grow a Future
           </h1>
-          <p class="md:text-sm text-xs mx-35">
+          <p class="text-base mx-35">
             Join our mission to plant 1 million trees and make the Earth greener
             for future
-            <span class="md:block md:text-center">generations.</span>
+            <span class="md:block text-center">generations.</span>
           </p>
           <button
-            class="bg-[#facc15] text-[#15803d] text-sm py-1 px-2 md:py-2.5 md:px-5 rounded-full cursor-pointer hover:bg-yellow-500 mb-1"
+            class="bg-[#facc15] text-[#15803d] text-sm py-2.5 px-5 rounded-full cursor-pointer hover:bg-yellow-500 mb-1"
           >
             Get Involved
           </button>
@@ -92,7 +94,7 @@
     </header>
     <main class="">
       <!-- Choose Your Trees section -->
-      <section class="bg-[#f0fdf4] text-center pt-20">
+      <section class="bg-[#f0fdf4] text-center pt-20 hidden">
         <h2 class="text-2xl font-semibold">Choose Your Trees</h2>
         <!-- spinner -->
         <section
@@ -101,7 +103,7 @@
         >
           <span class="loading loading-infinity loading-xl"></span>
         </section>
-        <!-- tree section -->
+        <!--parent of aside+cards+aside -->
         <div class="w-11/12 border-2 mx-auto grid grid-cols-12 mt-7 space-x-1">
           <!-- category section -->
           <aside class="col-span-2 border-2 text-left">
@@ -118,83 +120,91 @@
               class="font-semibold text-base text-[#1f2937]"
             ></div>
           </aside>
-
           <!-- card section -->
-
           <section
             id="card-container"
             class="col-span-8 grid grid-cols-1 md:grid-cols-3 gap-3 px-3"
           >
-            <!-- cards -->
-            <!-- modal section -->
-            <dialog
-              id="plant_detail_modal"
-              class="modal modal-bottom sm:modal-middle"
-            >
-              <div class="modal-box shadow-md">
-                <div id="details-container" class=" ">
-                  <!--dynamic modal design -->
-                </div>
-                <div class="modal-action">
-                  <form method="dialog">
-                    <!-- if there is a button in form, it will close the modal -->
-                    <button class="btn">Close</button>
-                  </form>
-                </div>
-              </div>
-            </dialog>
+            <!--dynamic cards -->
           </section>
-
-          <!-- history -->
+          <dialog
+            id="plant_detail_modal"
+            class="modal modal-bottom sm:modal-middle"
+          >
+            <div class="modal-box shadow-md">
+              <div id="details-container" class=" "></div>
+              <div class="modal-action">
+                <form method="dialog">
+                  <button class="btn">Close</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+          <!--aside history -->
           <aside class="col-span-2 border-2">
-            <h1>hdjdkd</h1>
+            <h1>hdjdkddfjksjgfj</h1>
           </aside>
         </div>
       </section>
-      <!-- campaign section -->
-      <section class="bg-[#cff0dc]"></section>
+      <!-- About campaign section -->
+      <section class="bg-[#f0fdf4] text-center md:py-[100px] py-10">
+        <h1 class="text-[#0b5727] text-3xl font-bold">About the Campaign</h1>
 
-      <!-- Open the modal using ID.showModal() method -->
-      <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-      <dialog
-        id="plant_detail_modal"
-        class="modal modal-bottom sm:modal-middle"
-      >
-        <div class="modal-box shadow-md">
-          <div id="details-container" class=" ">
-            <!-- <div
-              class="text-left object-cover bg-white rounded-xl p-4 shadow-md h-fit"
-            >
-              <h1 class="text-2xl font-bold">${ plant.name }</h1>
-              <img
-                class="w-full h-60 object-cover rounded-md"
-                src="${
-                plant.image
-              }"
-                alt="${plant.name}"
-              />
-              <p class="text-lg">
-                <span class="font-semibold">Category:</span> ${ plant.category }
-              </p>
-              <p class="text-lg">
-                <span class="font-semibold">Price:</span>
-                ৳${plant.price}
-              </p>
-              <p class="text-lg">
-                <span class="font-semibold">Description:</span>
-                ${plant.description}
-              </p>
-            </div> -->
-            <!--  -->
-          </div>
-          <div class="modal-action">
-            <form method="dialog">
-              <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Close</button>
-            </form>
+        <div
+          class="md:max-w-[1000px] w-11/12 flex md:flex-row flex-col justify-center mt-14 gap-10 mx-auto"
+        >
+          <img
+            class="md:max-w-[50%] max-w-full"
+            src="./assets/about.png"
+            alt="Tree"
+          />
+          <div
+            class="flex flex-col justify-center text-left md:max-w-[50%] max-w-full space-y-5 text-[#1F2937]"
+          >
+            <p>
+              Green Earth is a global tree-planting initiative committed to
+              restoring nature and protecting the environment. Since our
+              inception, we have planted hundreds of thousands of trees,
+              creating green spaces, supporting wildlife habitats, and reducing
+              carbon footprints. By joining our campaign, you contribute
+              directly to a healthier planet, helping combat climate change
+              while fostering sustainable communities for future generations.
+            </p>
+            <ul class="list-disc ml-10">
+              <li>Restoration of natural habitats</li>
+              <li>Improvement of air quality</li>
+              <li>Support for local communities</li>
+            </ul>
           </div>
         </div>
-      </dialog>
+      </section>
+      <!-- our impact section -->
+      <section class="bg-[#cff0dc] w-full py-[100px] text-center">
+        <h1 class="text-[#0b5727] text-3xl font-bold">Our Impact</h1>
+        <!-- impact card prnt -->
+        <div class="py-10 flex md:flex-row flex-col gap-x-8 justify-center">
+          <!-- impact cards -->
+          <div
+            class="w-[500px] p-10 rounded-lg space-y-3 bg-white shadow-lg text-center"
+          >
+            <h2 class="text-3xl font-semibold text-[#0b5727]">500K+</h2>
+            <p class="text-lg">Trees Planted</p>
+          </div>
+          <div
+            class="w-[500px] p-10 rounded-lg space-y-3 bg-white shadow-lg text-center"
+          >
+            <h2 class="text-3xl font-semibold text-[#0b5727]">120+</h2>
+            <p class="text-lg">Communities Involved</p>
+          </div>
+          <div
+            class="w-[500px] p-10 rounded-lg space-y-3 bg-white shadow-lg text-center"
+          >
+            <h2 class="text-3xl font-semibold text-[#0b5727]">30+</h2>
+            <p class="text-lg">Countries Reached</p>
+          </div>
+        </div>
+      </section>
+
       <script src="./script/index.js"></script>
     </main>
   </body>
