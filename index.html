@@ -64,7 +64,7 @@
             <li><a href="#">Plant a Tree</a></li>
           </ul>
           <button
-            class="bg-[#facc15] text-[#15803d] text-sm py-2.5 px-5 rounded-full cursor-pointer hover:bg-yellow-500"
+            class="bg-[#facc15] text-[#15803d] text-lg py-2.5 px-5 rounded-full cursor-pointer hover:bg-yellow-500"
           >
             Plant a Tree
           </button>
@@ -73,19 +73,19 @@
       <!-- hero section -->
       <section
         id="hero-section"
-        class="bg-[#cff0dc] w-full md:h-[350px] h-[250px] mt-1 flex justify-center items-center p-5"
+        class="bg-[#cff0dc] w-full md:h-[350px] h-[100%] mt-1 flex justify-center items-center p-5"
       >
         <div class="space-y-3 text-center mx-auto">
-          <h1 class="md:text-4xl text-3xl font-bold whitespace-nowrap">
+          <h1 class="md:text-4xl text-2xl font-bold whitespace-nowrap">
             Plant a Tree, Grow a Future
           </h1>
-          <p class="text-base mx-35">
+          <p class="text-base">
             Join our mission to plant 1 million trees and make the Earth greener
             for future
             <span class="md:block text-center">generations.</span>
           </p>
           <button
-            class="bg-[#facc15] text-[#15803d] text-sm py-2.5 px-5 rounded-full cursor-pointer hover:bg-yellow-500 mb-1"
+            class="bg-[#facc15] text-[#15803d] text-base py-2.5 px-5 rounded-full cursor-pointer hover:bg-yellow-500 mb-1"
           >
             Get Involved
           </button>
@@ -182,30 +182,65 @@
       <section class="bg-[#cff0dc] w-full py-[100px] text-center">
         <h1 class="text-[#0b5727] text-3xl font-bold">Our Impact</h1>
         <!-- impact card prnt -->
-        <div class="py-10 flex md:flex-row flex-col gap-x-8 justify-center">
+        <div
+          class="py-10 flex md:flex-row flex-col gap-8 justify-center items-center"
+        >
           <!-- impact cards -->
           <div
-            class="w-[500px] p-10 rounded-lg space-y-3 bg-white shadow-lg text-center"
+            class="md:w-[500px] p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
           >
             <h2 class="text-3xl font-semibold text-[#0b5727]">500K+</h2>
             <p class="text-lg">Trees Planted</p>
           </div>
           <div
-            class="w-[500px] p-10 rounded-lg space-y-3 bg-white shadow-lg text-center"
+            class="w-[500px] p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
           >
             <h2 class="text-3xl font-semibold text-[#0b5727]">120+</h2>
             <p class="text-lg">Communities Involved</p>
           </div>
           <div
-            class="w-[500px] p-10 rounded-lg space-y-3 bg-white shadow-lg text-center"
+            class="w-[500px] p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
           >
             <h2 class="text-3xl font-semibold text-[#0b5727]">30+</h2>
             <p class="text-lg">Countries Reached</p>
           </div>
         </div>
       </section>
-
+      <!-- Plant a Tree Today -->
+      <section class="w-full py-[100px] bg-[#166534] text-center">
+        <h2 class="text-3xl font-bold text-white">Plant a Tree Today</h2>
+        <div
+          class="p-10 bg-[#15803d] rounded-xl md:max-w-[650px] w-11/12 mx-auto mt-10 space-y-2.5"
+        >
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="input input-lg w-full font-light"
+          />
+          <input
+            type="text"
+            placeholder=" Your Name"
+            class="input input-lg w-full font-light"
+          />
+          <select class="select select-lg w-full font-light">
+            <option disabled selected>Number of Trees</option>
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+          </select>
+          <button
+            class="btn btn-warning w-full p-6 text-base text-[#15803d] rounded-full mt-2"
+          >
+            Warning
+          </button>
+        </div>
+      </section>
       <script src="./script/index.js"></script>
     </main>
+    <footer
+      class="bg-[#14532d] max-h-[70px] w-full items-center py-10 flex justify-center"
+    >
+      <p class="text-sm text-white">© 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>
