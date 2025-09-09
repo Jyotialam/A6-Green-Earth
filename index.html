@@ -50,21 +50,21 @@
   <body class="font-[inter] m-0 p-0">
     <header>
       <!-- nav bar -->
-      <nav class="bg-[#15803d] text-white md:py-8 py-8">
+      <nav class="bg-[#15803d] text-white md:py-8 py-4">
         <div
-          class="flex flex-col md:flex-row justify-between items-center w-11/12 px-2 mx-auto gap-3"
+          class="flex flex-col md:flex-row justify-between items-center w-11/12 px-2 mx-auto gap-2"
         >
-          <h2 class="font-bold text-3xl">
+          <h2 class="font-bold text-xl md:text-3xl">
             <i class="fa-brands fa-canadian-maple-leaf text-red-900"></i> Green
             Earth
           </h2>
-          <ul class="flex justify-center md:gap-5 md:text-base gap-2 text-sm">
+          <ul class="flex justify-center md:gap-5 md:text-base gap-3 text-sm">
             <li><a href="#">About</a></li>
             <li><a href="#">Gallery</a></li>
             <li><a href="#">Plant a Tree</a></li>
           </ul>
           <button
-            class="bg-[#facc15] text-[#15803d] text-lg py-2.5 px-5 rounded-full cursor-pointer hover:bg-yellow-500"
+            class="bg-[#facc15] text-[#15803d] text-sm md:text-lg py-2 md:py-3 px-4 rounded-full cursor-pointer hover:bg-yellow-500"
           >
             Plant a Tree
           </button>
@@ -73,19 +73,19 @@
       <!-- hero section -->
       <section
         id="hero-section"
-        class="bg-[#cff0dc] w-full md:h-[350px] h-[100%] mt-1 flex justify-center items-center p-5"
+        class="bg-[#cff0dc] w-full md:h-[350px] h-auto mt-1 flex justify-center items-center p-5"
       >
-        <div class="space-y-3 text-center mx-auto">
-          <h1 class="md:text-4xl text-2xl font-bold whitespace-nowrap">
+        <div class="space-y-3 text-center mx-auto px-2">
+          <h1 class="md:text-4xl text-xl font-bold">
             Plant a Tree, Grow a Future
           </h1>
-          <p class="text-base">
+          <p class="md:text-base text-xs">
             Join our mission to plant 1 million trees and make the Earth greener
             for future
             <span class="md:block text-center">generations.</span>
           </p>
           <button
-            class="bg-[#facc15] text-[#15803d] text-base py-2.5 px-5 rounded-full cursor-pointer hover:bg-yellow-500 mb-1"
+            class="bg-[#facc15] text-[#15803d] text-base py-2 md:py-3 md:px-4 px-4 rounded-full cursor-pointer hover:bg-yellow-500 mb-1"
           >
             Get Involved
           </button>
@@ -94,8 +94,8 @@
     </header>
     <main class="">
       <!-- Choose Your Trees section -->
-      <section class="bg-[#f0fdf4] text-center pt-20 hidden">
-        <h2 class="text-2xl font-semibold">Choose Your Trees</h2>
+      <section class="bg-[#f0fdf4] text-center pt-20">
+        <h2 class="md:text-3xl text-xl font-bold">Choose Your Trees</h2>
         <!-- spinner -->
         <section
           id="spinner"
@@ -104,14 +104,16 @@
           <span class="loading loading-infinity loading-xl"></span>
         </section>
         <!--parent of aside+cards+aside -->
-        <div class="w-11/12 border-2 mx-auto grid grid-cols-12 mt-7 space-x-1">
+        <div
+          class="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-12 mt-7 gap-2"
+        >
           <!-- category section -->
-          <aside class="col-span-2 border-2 text-left">
-            <h2 class="font-bold text-xl mb-3">Categories</h2>
+          <aside class="md:col-span-2 col-span-12 text-left">
+            <h2 class="font-bold md:text-xl text-lg mb-3 pl-1">Categories</h2>
             <button
               id="card-btn"
               onclick="loadAllCards()"
-              class="un-active hover:bg-[#6cd191] cursor-pointer w-full text-left py-2 font-semibold text-base text-[#1f2937] mb-2"
+              class="un-active pl-1 rounded-r-md hover:bg-[#6cd191] cursor-pointer w-full text-left py-2 font-semibold text-base text-[#1f2937] mb-2"
             >
               All Trees
             </button>
@@ -123,7 +125,7 @@
           <!-- card section -->
           <section
             id="card-container"
-            class="col-span-8 grid grid-cols-1 md:grid-cols-3 gap-3 px-3"
+            class="lg:col-span-8 col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-3"
           >
             <!--dynamic cards -->
           </section>
@@ -141,8 +143,18 @@
             </div>
           </dialog>
           <!--aside history -->
-          <aside class="col-span-2 border-2">
-            <h1>hdjdkddfjksjgfj</h1>
+          <aside
+            class="md:col-span-2 col-span-12 p-4 text-left bg-white rounded-lg"
+          >
+            <h1 class="text-2xl font-bold">Your Cart</h1>
+            <div id="cart"></div>
+            <div
+              id="price-container"
+              class="total-price my-3 hidden flex justify-between"
+            >
+              <h2>Total</h2>
+              <h2 id="total-price">৳</h2>
+            </div>
           </aside>
         </div>
       </section>
@@ -183,55 +195,63 @@
         <h1 class="text-[#0b5727] text-3xl font-bold">Our Impact</h1>
         <!-- impact card prnt -->
         <div
-          class="py-10 flex md:flex-row flex-col gap-8 justify-center items-center"
+          class="py-10 flex md:flex-row flex-col gap-6 justify-center items-center mx-5"
         >
           <!-- impact cards -->
           <div
-            class="md:w-[500px] p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
+            class="md:w-[300px] w-full p-6 md:p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
           >
-            <h2 class="text-3xl font-semibold text-[#0b5727]">500K+</h2>
-            <p class="text-lg">Trees Planted</p>
+            <h2 class="md:text-3xl text-2xl font-semibold text-[#0b5727]">
+              500K+
+            </h2>
+            <p class="md:text-lg text-base">Trees Planted</p>
           </div>
           <div
-            class="w-[500px] p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
+            class="md:w-[300px] w-full p-6 md:p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
           >
-            <h2 class="text-3xl font-semibold text-[#0b5727]">120+</h2>
-            <p class="text-lg">Communities Involved</p>
+            <h2 class="md:text-3xl text-2xl font-semibold text-[#0b5727]">
+              120+
+            </h2>
+            <p class="md:text-lg text-base">Communities Involved</p>
           </div>
           <div
-            class="w-[500px] p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
+            class="md:w-[300px] w-full p-6 md:p-10 rounded-xl space-y-3 bg-white shadow-xl text-center"
           >
-            <h2 class="text-3xl font-semibold text-[#0b5727]">30+</h2>
-            <p class="text-lg">Countries Reached</p>
+            <h2 class="md:text-3xl text-2xl font-semibold text-[#0b5727]">
+              30+
+            </h2>
+            <p class="md:text-lg text-base">Countries Reached</p>
           </div>
         </div>
       </section>
       <!-- Plant a Tree Today -->
-      <section class="w-full py-[100px] bg-[#166534] text-center">
-        <h2 class="text-3xl font-bold text-white">Plant a Tree Today</h2>
+      <section class="w-full py-16 md:py-[100px] bg-[#166534] text-center">
+        <h2 class="md:text-3xl text-2xl font-bold text-white">
+          Plant a Tree Today
+        </h2>
         <div
           class="p-10 bg-[#15803d] rounded-xl md:max-w-[650px] w-11/12 mx-auto mt-10 space-y-2.5"
         >
           <input
             type="text"
             placeholder="Your Name"
-            class="input input-lg w-full font-light"
+            class="input md:input-lg input-md w-full font-light"
           />
           <input
             type="text"
             placeholder=" Your Name"
-            class="input input-lg w-full font-light"
+            class="input md:input-lg input-md w-full font-light"
           />
-          <select class="select select-lg w-full font-light">
+          <select class="select md:select-lg select-md w-full font-semibold">
             <option disabled selected>Number of Trees</option>
-            <option>5</option>
-            <option>10</option>
-            <option>15</option>
+            <option>1 Tree - $5</option>
+            <option>5 Trees - $25</option>
+            <option>10 Trees - $50</option>
           </select>
           <button
-            class="btn btn-warning w-full p-6 text-base text-[#15803d] rounded-full mt-2"
+            class="btn btn-warning w-full md:p-6 p-4 text-sm md:text-base text-[#15803d] rounded-full mt-2"
           >
-            Warning
+            Donate Now
           </button>
         </div>
       </section>

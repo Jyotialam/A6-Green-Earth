@@ -1,3 +1,5 @@
+//cart
+let cart = [];
 const manageSpinner = (status) => {
   if (status == true) {
     document.getElementById("spinner").classList.remove("hidden");
@@ -52,8 +54,10 @@ const displayAllCards = (plants) => {
                 }</p>
                 <p>৳ ${plant.price}</p>
               </div>  
-            <button
-                class="bg-[#15803d] text-white text-sm py-2 px-5 w-full rounded-full cursor-pointer hover:bg-green-500 mt-3 text-center"
+            <button onclick="addToCart('${plant.name}',${plant.price},${
+      plant.id
+    })"
+                class="bg-[#15803d] text-white text-sm py-2.5 px-5 w-full rounded-full cursor-pointer hover:bg-green-500 mt-3 text-center"
               >
                 Add to card
               </button>
@@ -154,7 +158,9 @@ const displayCategoryCards = (plants) => {
               }</p>
               <p>৳ ${plant.price}</p>
               </div>  
-              <button class="bg-[#15803d] text-white text-sm py-2 px-5 w-full rounded-full cursor-pointer hover:bg-green-500 mt-3 text-center">Add to card
+              <button onclick="addToCart('${plant.name}',${plant.price},${
+      plant.id
+    })" class="bg-[#15803d] text-white text-sm py-2.5 px-5 w-full rounded-full cursor-pointer hover:bg-green-500 mt-3 text-center">Add to card
               </button>
               </div>`;
     cardContainer.append(card);
@@ -167,10 +173,67 @@ const displayCategories = (categories) => {
   categories.forEach((category) => {
     const categoryDiv = document.createElement("div");
     categoryDiv.innerHTML = `
-              <button id="card-btn-${category.id}" onclick = "loadCategoryCard('${category.id}')" class="un-active cursor-pointer hover:bg-[#6cd191] w-full text-left py-2" >${category.category_name}</button>`;
+              <button id="card-btn-${category.id}" onclick = "loadCategoryCard('${category.id}')" class="pl-1 un-active cursor-pointer hover:bg-[#6cd191] w-full text-left py-2 rounded-r-md" >${category.category_name}</button>`;
     categoryContainer.append(categoryDiv);
   });
 };
+//utilities
+
+// function removeClass(className) {
+//   const allBtn = document.getElementsByClassName(className);
+//   for (let btn of allBtn) {
+//     btn.classList.remove("active");
+//   }
+// }
+// displa cart
+
+const addToCart = (name, price, id) => {
+  alert(`${name} added to the cart`);
+
+  const treeInfo = {};
+  const totalPrice = document.getElementById("price-container");
+  totalPrice.classList.remove("hidden");
+  treeInfo.name = name;
+  treeInfo.price = price;
+  treeInfo.id = id;
+
+  cart.push(treeInfo);
+
+  dataAddToCart(cart);
+};
+const dataAddToCart = (carts) => {
+  const PriceContainer = document.getElementById("price-container");
+  PriceContainer.classList.remove("hidden");
+  if (carts.length === 0) {
+    PriceContainer.classList.add("hidden");
+  }
+
+  const cartContainer = document.getElementById("cart");
+  cartContainer.innerHTML = "";
+
+  const totalPrice = document.getElementById("total-price");
+  let total = 0;
+  for (let cart of carts) {
+    const { name, price, id } = cart;
+    total += price;
+    const div = document.createElement("div");
+    div.className = "mb-3 bg-gray-300 flex justify-between items-center";
+    div.innerHTML = `
+    <div class="">
+    <h2>${name}</h2>
+    <h2>${price}</h2>
+    </div>
+    <button onclick="cartFilter(${id})" class="btn font-bold text-red-600">X</button>
+    `;
+    cartContainer.append(div);
+  }
+  totalPrice.innerText = total;
+};
+const cartFilter = (id) => {
+  cart = cart.filter((item) => item.id !== id);
+  dataAddToCart(cart);
+};
+
 loadAllCards();
 
 loadCategories();
