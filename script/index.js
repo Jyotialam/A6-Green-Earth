@@ -1,18 +1,16 @@
-//cart
 let cart = [];
 const manageSpinner = (status) => {
   if (status == true) {
     document.getElementById("spinner").classList.remove("hidden");
-    document.getElementById("card-container").classList.add("hidden");
+    document.getElementById("card-container").classList.add("invisible");
   } else {
     document.getElementById("spinner").classList.add("hidden");
-    document.getElementById("card-container").classList.remove("hidden");
+    document.getElementById("card-container").classList.remove("invisible");
   }
 };
 // remove active
 const removeActiveAll = () => {
   const categoryBtns = document.querySelectorAll(".un-active");
-  // console.log(unActiveBtn);
   categoryBtns.forEach((categoryBtn) => {
     categoryBtn.classList.remove("active");
   });
@@ -24,9 +22,8 @@ const loadAllCards = () => {
     .then((res) => res.json())
     .then((data) => {
       removeActiveAll(); /// remove all active
-      // add active
-      const addActive = document.getElementById(`card-btn`);
-      // console.log(clickBtn);
+
+      const addActive = document.getElementById(`card-btn`); // add active
       addActive.classList.add("active"); // add active
       displayAllCards(data.plants);
       manageSpinner(false);
@@ -38,8 +35,8 @@ const displayAllCards = (plants) => {
   plants.forEach((plant) => {
     const card = document.createElement("div");
     card.innerHTML = `
-              <div class="text-left max-h-[450px] object-cover bg-white    rounded-xl p-4 shadow-md h-fit space-y-3">
-              <img class="w-full h-40 object-cover rounded-md" src="${
+              <div class="text-left max-h-[450px] object-cover bg-white    rounded-xl p-4 shadow-md h-fit space-y-4">
+              <img class="w-full h-40 object-cover rounded-lg" src="${
                 plant.image
               }" alt="${plant.name}" />
                 <button onclick="loadPlantDetail(${
@@ -77,7 +74,6 @@ const loadCategories = () => {
 // remove active
 const removeActive = () => {
   const categoryBtns = document.querySelectorAll(".un-active");
-  // console.log(unActiveBtn);
   categoryBtns.forEach((categoryBtn) => {
     categoryBtn.classList.remove("active");
   });
@@ -93,7 +89,6 @@ const loadCategoryCard = (id) => {
 
       // add active
       const addActive = document.getElementById(`card-btn-${id}`);
-      // console.log(clickBtn);
       addActive.classList.add("active"); // add active
 
       displayCategoryCards(data.plants);
@@ -116,7 +111,7 @@ const displayPlantDetail = (plant) => {
             >
               <h1 class="text-2xl font-bold">${plant.name}</h1>
               <img
-                class="w-full h-60 object-cover rounded-md shadow-lg"
+                class="w-full h-60 object-cover rounded-lg shadow-lg"
                 src="${plant.image}"
                 alt="${plant.name}"
               />
@@ -143,7 +138,7 @@ const displayCategoryCards = (plants) => {
     const card = document.createElement("div");
     card.innerHTML = `
               <div class="text-left max-h-[450px] object-cover bg-white    rounded-xl p-4 shadow-md h-fit space-y-3">
-              <img class="w-full h-40 object-cover rounded-md" src="${
+              <img class="w-full h-40 object-cover rounded-lg" src="${
                 plant.image
               }" alt="${plant.name}" />
               <button onclick="loadPlantDetail(${
@@ -177,16 +172,8 @@ const displayCategories = (categories) => {
     categoryContainer.append(categoryDiv);
   });
 };
-//utilities
 
-// function removeClass(className) {
-//   const allBtn = document.getElementsByClassName(className);
-//   for (let btn of allBtn) {
-//     btn.classList.remove("active");
-//   }
-// }
-// displa cart
-
+// display cart
 const addToCart = (name, price, id) => {
   alert(`${name} added to the cart`);
 
@@ -217,13 +204,14 @@ const dataAddToCart = (carts) => {
     const { name, price, id } = cart;
     total += price;
     const div = document.createElement("div");
-    div.className = "mb-3 bg-gray-300 flex justify-between items-center";
+    div.className =
+      "p-3 mt-3 rounded-lg bg-[#f0fdf4] flex justify-between items-center";
     div.innerHTML = `
     <div class="">
-    <h2>${name}</h2>
-    <h2>${price}</h2>
+    <h2 class="font-semibold">${name}</h2>
+    <h2 class="text-gray-400">৳ ${price} × 1</h2>
     </div>
-    <button onclick="cartFilter(${id})" class="btn font-bold text-red-600">X</button>
+    <button onclick="cartFilter(${id})" class="cursor-pointer hover:bg-gray-400 font-bold text-red-600">X</button>
     `;
     cartContainer.append(div);
   }

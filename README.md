@@ -1,37 +1,3 @@
-## ✅ Main Requirements
-
-#### 3) About Campaign
-
-- **Section heading**
-- **Image on the left**, **text on the right**
-
-#### 4) Our Impact Section
-
-- Show **3 cards** with campaign **statistics**
-
-#### 5) Plant a Tree Today Section & Footer
-
-- **Form**: Name, Email, Number of Trees
-- **Footer** with copyright info
-
-#### 6) Responsiveness
-
-- Website must be **mobile responsive**
-
----
-
-## 🧪 Challenges
-
-    1) Add to Cart
-    Clicking Add to Cart: - Adds the tree to Cart List
-                          - Shows tree name
-
-    2) Total Calculation
-    Calculate total price of trees in cart.
-
-    3) Remove from Cart
-    Clicking ❌ removes tree and deducts price from total.
-
 #### 1) What is the difference between var, let, and const?
 
 Answer :
